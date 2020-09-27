@@ -2,7 +2,8 @@ import psycopg2
 
 DBNAME = 'my_database'
 USER = 'postgres'
-PASSWORD = '7PF6wihk'
+with open('password.txt', 'r', encoding='utf-8-sig') as file:
+    PASSWORD = file.read().rstrip()
 HOST = 'localhost'
 connection = psycopg2.connect(dbname=DBNAME, user=USER,
                               password=PASSWORD, host=HOST)
